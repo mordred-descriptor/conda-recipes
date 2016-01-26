@@ -6,5 +6,5 @@ for dir in *; do
     [[ ! -d $dir ]] && continue
 
     cd $cwd/$dir
-    anaconda build submit --channel main .
+    anaconda build submit --channel main --channel dev .
 done

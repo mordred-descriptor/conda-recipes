@@ -3,8 +3,9 @@
 cwd=$(cd `dirname $0`; pwd)
 
 for dir in *; do
-    [[ ! -d $dir ]] && continue
+    [[ ! -d $cwd/$dir ]] && continue
 
     cd $cwd/$dir
-    anaconda build submit --channel main --channel dev .
+    echo $dir
+    anaconda build submit --channel main --channel dev . || true
 done

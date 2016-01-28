@@ -1,0 +1,20 @@
+package:
+  name: tqdm
+  version: "3.7.1"
+
+source:
+  git_url: https://github.com/tqdm/tqdm.git
+  git_rev: v3.7.1
+
+requirements:
+  build:
+    - python
+    - setuptools
+
+  run:
+    - python
+
+about:
+  home: https://github.com/tqdm/tqdm#license
+  license: MIT License
+  summary: 'A fast, extensible progress bar for Python'

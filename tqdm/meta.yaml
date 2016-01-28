@@ -22,4 +22,4 @@ about:
 build:
   script:
     - git cherry-pick 23c596fb331478cbc15d1854b61a3e63284da3a5
-    - $PYTHON setup.py build
+    - $PYTHON setup.py install

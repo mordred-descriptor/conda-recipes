@@ -13,6 +13,10 @@ script:
   - conda build .
 
 after_success:
+  - ls
+  - echo $CONDA_BUILD_DIR
+  - ls $CONDA_BUILD_DIR
+  - pwd
   - if [[ -d $CONDA_BUILD_DIR ]]; then
       CONDA_BUILD_DIR=/opt/miniconda/conda-bld/linux-64;
     fi

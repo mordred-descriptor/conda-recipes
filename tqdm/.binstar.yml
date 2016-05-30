@@ -13,7 +13,7 @@ script:
   - conda build .
 
 after_success:
-  - conda convert /opt/miniconda/conda-bld/linux-64/*.tar.bz2 -p osx-64 -p win-32 -p win-64
+  - conda convert $CONDA_BUILD_DIR/*.tar.bz2 -p osx-64 -p win-32 -p win-64
 
 build_targets:
   - conda

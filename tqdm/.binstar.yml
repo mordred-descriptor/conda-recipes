@@ -13,11 +13,8 @@ script:
   - conda build .
 
 after_success:
-  - ls
-  - echo $CONDA_BUILD_DIR
-  - ls $CONDA_BUILD_DIR
-  - pwd
-  - if [[ -d $CONDA_BUILD_DIR ]]; then
+  - if [[ -d "$CONDA_BUILD_DIR" ]]; then
+      echo docker;
       CONDA_BUILD_DIR=/opt/miniconda/conda-bld/linux-64;
     fi
   - conda convert /opt/miniconda/conda-bld/linux-64/*.tar.bz2 -p osx-64 -p win-32 -p win-64

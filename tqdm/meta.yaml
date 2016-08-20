@@ -1,6 +1,6 @@
 package:
   name: tqdm
-  version: "4.7.4"
+  version: "4.8.4"
 
 build:
   number: 0
@@ -9,7 +9,7 @@ build:
 
 source:
   git_url: https://github.com/tqdm/tqdm.git
-  git_rev: v4.7.4
+  git_rev: v4.8.4
 
 requirements:
   build:

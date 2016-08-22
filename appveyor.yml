@@ -1,0 +1,27 @@
+build: off
+
+environment:
+  ANACONDA_CLOUD_TOKEN:
+    secure: 8/KAIYa0G77jtIFNYhv09Y1JZq5IX9fKrKKdYL76msMIbem7pQoQONyY6WTz+/3l
+
+  matrix:
+    - PYTHON_VERSION: 2.7
+      MINICONDA: C:\Miniconda-x64
+    - PYTHON_VERSION: 3.4
+      MINICONDA: C:\Miniconda3-x64
+    - PYTHON_VERSION: 3.5
+      MINICONDA: C:\Miniconda35-x64
+    - PYTHON_VERSION: 2.7
+      MINICONDA: C:\Miniconda
+    - PYTHON_VERSION: 3.4
+      MINICONDA: C:\Miniconda3
+    - PYTHON_VERSION: 3.5
+      MINICONDA: C:\Miniconda35
+
+install:
+  - "set PATH=%MINICONDA%;%MINICONDA%\\Scripts;%PATH%"
+  - conda config --set always_yes yes --set changeps1 no --set anaconda_upload yes
+  - conda install --file requirements.txt
+
+on_success:
+  - build.bat

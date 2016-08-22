@@ -1,0 +1,31 @@
+language: bash
+
+env:
+  global:
+    - secure: "eEiVbVzUZRQZetH1Cnq23CE32VE8P6jaWSXcxT8O+kwv8AOPXZbSMqozKcwej6aRjalI1xPlzc3B8chvFO/9A0nqXgNUe4dk5OYuHgBR1M7oOoBWcCCZreE5D61Rcq2VYKY5uaKVBi1OUK13XkrGvVG+Dbw4JpsXJe2h/hROk64UDRRyRa1KAhQnGHypqgwhfRO0g0mXkIzG4GCz63ytyh9GAuX1cnnfUuxXewo4ZW96Q0G9UDu+7wj5d4Uk9zslsXQBbEULgG02vyt2KMpEDdrX6EIZQD7n4Q+GRJYYiFg4wZfUUkaYnGo5rtuKnoMJaWN8Psw+TqUpSd291NySaDW8PV2dSdfpXY2YNM++YN5NtoCZY9TCo1BssXi8fUXvxyTjZ9PEOesFzXA6l7v0w/4Ss2WPt/eZuaXehperDtyDP66GmIl4SLuBA6t7JFFu3VJy+/5HHIkezxQ3vIbsb1sEaBqP0fygizmC+Vk6XT9cg0bCxyDx5NH++Wr5ynBYT2vdo39YB2deG8g9V1HBychuCjqXaiaYHcfMQZiBht2jd5svv+lvm0lzEpRzmmLY3e6DlxIFYSjzVJd61JRkoCkKOKVtD8HFhUCmQO9Q3uS9sgK9csdw4aUMJWwMd6DAy7iUwfeDXMPGYo9+yAisIblJx9Z9u9+gAhMCkLGm+1g="
+
+  matrix:
+    - PYTHON_VERSION=2.7
+      CONDA_NAME=Miniconda
+    - PYTHON_VERSION=3.4
+      CONDA_NAME=Miniconda3
+    - PYTHON_VERSION=3.5
+      CONDA_NAME=Miniconda3
+
+os:
+  - linux
+  - osx
+
+sudo: false
+
+install:
+  - if [[ "$TRAVIS_OS_NAME" == osx ]]; then export CONDA_OS=MacOSX; else export CONDA_OS=Linux; fi
+  - wget https://repo.continuum.io/miniconda/${CONDA_NAME}-latest-${CONDA_OS}-x86_64.sh -O miniconda.sh
+  - bash miniconda.sh -b -p $HOME/miniconda
+  - export PATH="$HOME/miniconda/bin:$PATH"
+  - hash -r
+  - conda config --set always_yes yes --set changeps1 no --set anaconda_upload yes
+  - conda install --file requirements.txt
+
+script:
+  - bash build.sh

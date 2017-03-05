@@ -11,12 +11,14 @@ environment:
       MINICONDA: C:\Miniconda3-x64
     - PYTHON_VERSION: 3.5
       MINICONDA: C:\Miniconda35-x64
+    - PYTHON_VERSION: 3.6
+      MINICONDA: C:\Miniconda36-x64
     - PYTHON_VERSION: 2.7
       MINICONDA: C:\Miniconda
     - PYTHON_VERSION: 3.4
       MINICONDA: C:\Miniconda3
-    - PYTHON_VERSION: 3.5
-      MINICONDA: C:\Miniconda35
+    - PYTHON_VERSION: 3.6
+      MINICONDA: C:\Miniconda36
 
 install:
   - "set PATH=%MINICONDA%;%MINICONDA%\\Scripts;%PATH%"

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 for base in *; do
     [[ -f $base ]] && continue
 

@@ -2,7 +2,7 @@ build: off
 
 environment:
   ANACONDA_CLOUD_TOKEN:
-    secure: 8/KAIYa0G77jtIFNYhv09Y1JZq5IX9fKrKKdYL76msMIbem7pQoQONyY6WTz+/3l
+    secure: rmFU4GeujaArkHaKwBvgcBPpWN9NPJGMwXHs+hN6VdrcCt8y3E6vfs7pb0XpW7Bg
 
   matrix:
     - PYTHON_VERSION: 2.7

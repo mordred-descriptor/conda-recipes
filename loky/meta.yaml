@@ -1,0 +1,27 @@
+package:
+  name: loky
+  version: "2.1.1"
+
+build:
+  number: 0
+
+source:
+  git_url: https://github.com/tomMoral/loky.git
+  git_rev: 2.1.1
+
+requirements:
+  build:
+    - python
+    - setuptools
+
+  run:
+    - python
+
+about:
+  home: https://github.com/tomMoral/loky
+  license: 3-clause BSD License
+  summary: 'Robust and reusable Executor for joblib'
+
+test:
+  imports:
+    - loky

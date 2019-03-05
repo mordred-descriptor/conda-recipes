@@ -7,6 +7,6 @@ env:
 os:
 - linux
 - osx
-sudo: false
-install: travis_retry install.sh
-script: travis_retry build.sh
+sudo: required
+install: travis_retry ./install.sh
+script: travis_retry ./build.sh

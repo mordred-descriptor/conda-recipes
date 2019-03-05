@@ -1,0 +1,22 @@
+package:
+  name: mopac7
+  version: "7.1.15"
+
+build:
+  number: 0
+
+source:
+  url: http://bioinformatics.org/ghemical/download/current/mopac7-1.15.tar.gz
+  sha256: 6d7ac5d78522db70f7794fd816cea32829cfa9e93774202fe80ba5a54375fbaa
+
+requirements:
+  build:
+    - make
+    - libtool
+    - automake
+    - autoconf
+
+about:
+  home: https://github.com/tqdm/tqdm#license
+  license: MIT License
+  summary: 'A fast, extensible progress bar for Python'

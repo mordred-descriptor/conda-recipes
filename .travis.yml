@@ -1,25 +1,12 @@
 language: bash
 env:
-  matrix:
-  - PYTHON_VERSION=2.7
-  - PYTHON_VERSION=3.4
-  - PYTHON_VERSION=3.5
-  - PYTHON_VERSION=3.6
   global:
-    secure: Zasi2qXMS85Flx+26d3zd0HD1Z93BX7xeBDXprUQ3LhqOGG65TV5wFUZotuqcHIMqrlYmi5RvcGTOBVau1AB5teQ/5D0by0e7WE9zJz1aGOFlcgbGewrED7Ur3FGaOca0O3TL8Szv/bOiZjvHo7HsUlc3OxYTs3sZkjXrVXPHfXtRv8K9F/SBR+7jPbwXE2bpK33OMtWg/uIdkK9/toMisSJ3FWrLC5LuFdUZd+RahL36RFncI78fcQ1YlB7vaDzJvvK8PoP0r08C9XklMJU7HMK3dPrTAjt4EnGQXBpct5hWOH4yXwsqlrFoTvPoseVijcDUBaACM1z9228U7LXSBbVx4rGQeHxtOWZU+qcnI4IAunNMctOQDaC9F2vwm1PVXrGULmIHV9WwMmjjvDCo+sQkpMMskdIeAAoO9dSe3TxrJanU5RHBRxWJyNVU09TPl8YqzDJhonGHh532YTwn2O9KxYqlHSxplWIcKwqOQ88xWM3XZPdL64kc0JqZMpiWbymJ8JPTo9/eTiGhsoozYmeGgj/XF1MhuPyP6woB7BIzfe04Gbi394fsGHQtBrWUHyvzLbHlca9SCLnbpJ0tdWLSzPELG1e1Ft/QH9G11lncBAo9daolTCCpumR62bzeE2I76N5O3Y0Otjnr1BLgji4FVLBXh5gaBUbmIeCLi8=
+  - secure: Zasi2qXMS85Flx+26d3zd0HD1Z93BX7xeBDXprUQ3LhqOGG65TV5wFUZotuqcHIMqrlYmi5RvcGTOBVau1AB5teQ/5D0by0e7WE9zJz1aGOFlcgbGewrED7Ur3FGaOca0O3TL8Szv/bOiZjvHo7HsUlc3OxYTs3sZkjXrVXPHfXtRv8K9F/SBR+7jPbwXE2bpK33OMtWg/uIdkK9/toMisSJ3FWrLC5LuFdUZd+RahL36RFncI78fcQ1YlB7vaDzJvvK8PoP0r08C9XklMJU7HMK3dPrTAjt4EnGQXBpct5hWOH4yXwsqlrFoTvPoseVijcDUBaACM1z9228U7LXSBbVx4rGQeHxtOWZU+qcnI4IAunNMctOQDaC9F2vwm1PVXrGULmIHV9WwMmjjvDCo+sQkpMMskdIeAAoO9dSe3TxrJanU5RHBRxWJyNVU09TPl8YqzDJhonGHh532YTwn2O9KxYqlHSxplWIcKwqOQ88xWM3XZPdL64kc0JqZMpiWbymJ8JPTo9/eTiGhsoozYmeGgj/XF1MhuPyP6woB7BIzfe04Gbi394fsGHQtBrWUHyvzLbHlca9SCLnbpJ0tdWLSzPELG1e1Ft/QH9G11lncBAo9daolTCCpumR62bzeE2I76N5O3Y0Otjnr1BLgji4FVLBXh5gaBUbmIeCLi8=
+  matrix:
+  - PYTHON_VERSION=3.7
 os:
 - linux
 - osx
 sudo: false
-install:
-- if [[ "$TRAVIS_OS_NAME" == osx ]]; then export CONDA_OS=MacOSX; else export CONDA_OS=Linux;
-  fi
-- wget https://repo.continuum.io/miniconda/Miniconda3-latest-${CONDA_OS}-x86_64.sh
-  -O miniconda.sh
-- bash miniconda.sh -b -p $HOME/miniconda
-- export PATH="$HOME/miniconda/bin:$PATH"
-- hash -r
-- conda config --set always_yes yes --set changeps1 no --set anaconda_upload yes
-- conda install --file requirements.txt
-script:
-- bash build.sh
+install: travis_retry install.sh
+script: travis_retry build.sh

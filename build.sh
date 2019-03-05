@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source ./common.sh
+
 set -e
 
 for base in *; do

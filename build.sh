@@ -1,8 +1,8 @@
 #!/bin/bash
 
-source ./common.sh
-
 set -e
+
+source ./common.sh
 
 for base in *; do
     if [[ -f $base ]]; then

@@ -8,5 +8,5 @@ os:
 - linux
 - osx
 sudo: required
-install: travis_retry ./install.sh
-script: travis_retry ./build.sh
+install: travis_retry bash ./install.sh
+script: travis_retry bash ./build.sh

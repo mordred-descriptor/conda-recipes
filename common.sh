@@ -3,6 +3,7 @@
 export MINICONDA=$HOME/miniconda
 
 if [[ "$TRAVIS_OS_NAME" == osx ]]; then
+    export HOMEBREW_NO_AUTO_UPDATE=1
     export OS_NAME=MacOSX
 elif [[ "$TRAVIS_OS_NAME" == linux ]]; then
     export OS_NAME=Linux

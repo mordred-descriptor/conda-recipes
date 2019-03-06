@@ -3,4 +3,4 @@ conda-recipes
 ==
 mordred-descriptor dependencies
 
-https://anaconda.org/mordred-descriptor/dashboard
+https://anaconda.org/mordred-descriptor

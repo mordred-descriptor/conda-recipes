@@ -9,6 +9,10 @@ for base in *; do
         continue
     fi
 
+    if [[ -f $base/$OS ]] && ! grep "$OS_NAME" $base/$OS &> /dev/null; then
+        continue
+    fi
+
     cd $base
     if [[ -f before.sh ]]; then
         bash before.sh

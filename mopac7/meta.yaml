@@ -17,6 +17,6 @@ requirements:
     - autoconf
 
 about:
-  home: https://github.com/tqdm/tqdm#license
-  license: MIT License
-  summary: 'A fast, extensible progress bar for Python'
+  home: http://openmopac.net/
+  license: Public Domain
+  summary: "a semiempirical quantum chemistry program based on Dewar and Thiel's NDDO approximation."

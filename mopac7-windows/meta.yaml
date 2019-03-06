@@ -1,0 +1,15 @@
+package:
+  name: mopac7
+  version: "7.1.10"
+
+build:
+  number: 0
+
+source:
+  url: http://openmopac.net/Downloads/MOPAC_7.1executable.zip
+  sha256: d12cd60192b22549a59a44a2e602a3926ccd8f8474788f05db3d589b2c057ab9
+
+about:
+  home: http://openmopac.net/
+  license: Public Domain
+  summary: "a semiempirical quantum chemistry program based on Dewar and Thiel's NDDO approximation."

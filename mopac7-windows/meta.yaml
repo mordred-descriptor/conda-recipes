@@ -1,6 +1,6 @@
 package:
   name: mopac7
-  version: "7.1.10"
+  version: "7.10"
 
 build:
   number: 0

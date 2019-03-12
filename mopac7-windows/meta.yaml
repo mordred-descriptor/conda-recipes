@@ -1,13 +1,13 @@
 package:
   name: mopac7
-  version: "7.10"
+  version: "7.00"
 
 build:
   number: 0
 
 source:
-  url: http://openmopac.net/Downloads/MOPAC_7.1executable.zip
-  sha256: d12cd60192b22549a59a44a2e602a3926ccd8f8474788f05db3d589b2c057ab9
+  url: http://openmopac.net/Downloads/Mopac7executable.zip
+  sha256: bab7c28afffb8c8d9740f9364fb28b32802c4b207c996371dbe4699ec6f98f04
 
 about:
   home: http://openmopac.net/

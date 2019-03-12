@@ -1,1 +1,1 @@
-move MOPAC_7.exe %PREFIX%\Scripts
+move mopac7.exe %PREFIX%\Scripts
